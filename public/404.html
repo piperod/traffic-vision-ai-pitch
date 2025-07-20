@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <title>Traffic Vision AI - Pitch Deck</title>
     <script type="text/javascript">
+      // Debug: Log the current URL
+      console.log('404.html loaded');
+      console.log('Current URL:', window.location.href);
+      console.log('Pathname:', window.location.pathname);
+      
       // Single Page Apps for GitHub Pages
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
@@ -13,15 +18,21 @@
       var pathSegmentsToKeep = 1;
 
       var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      var redirectUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
         l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
         l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
         (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+        l.hash;
+      
+      console.log('Redirecting to:', redirectUrl);
+      l.replace(redirectUrl);
     </script>
   </head>
   <body>
+    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+      <h1>Redirecting...</h1>
+      <p>If you see this page, the 404.html is working!</p>
+      <p>You should be redirected to the main app shortly.</p>
+    </div>
   </body>
 </html> 
