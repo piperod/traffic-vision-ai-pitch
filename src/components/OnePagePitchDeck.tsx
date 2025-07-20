@@ -19,6 +19,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
+import { useRef } from "react";
 
 const slides = [
   { component: CompanyOverviewSlide, title: "Company Overview" },
@@ -37,6 +38,27 @@ const slides = [
 ];
 
 export const OnePagePitchDeck = () => {
+  const scrollToSection = (sectionId: string) => {
+    console.log('Scrolling to section:', sectionId);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      console.log('Element found, scrolling...');
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      console.log('Element not found:', sectionId);
+    }
+    // Close dropdown after a short delay
+    setTimeout(() => {
+      const dropdownTrigger = document.querySelector('[data-radix-dropdown-menu-trigger]');
+      if (dropdownTrigger) {
+        (dropdownTrigger as HTMLElement).click();
+      }
+    }, 100);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Fixed Header */}
@@ -54,18 +76,17 @@ export const OnePagePitchDeck = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-64">
               {slides.map((slide, index) => (
-                <DropdownMenuItem key={index} asChild>
-                  <a
-                    href={`#slide-${index}`}
-                    className="flex items-center justify-between w-full"
-                  >
-                    <span className="text-sm font-medium text-primary">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                    <span className="text-sm text-muted-foreground">
-                      {slide.title}
-                    </span>
-                  </a>
+                <DropdownMenuItem 
+                  key={index} 
+                  onClick={() => scrollToSection(`slide-${index}`)}
+                  className="flex items-center justify-between w-full cursor-pointer"
+                >
+                  <span className="text-sm font-medium text-primary">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="text-sm text-muted-foreground">
+                    {slide.title}
+                  </span>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
