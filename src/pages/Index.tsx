@@ -1,7 +1,7 @@
-import { PitchDeck } from "@/components/PitchDeck";
+import { OnePagePitchDeck } from "@/components/OnePagePitchDeck";
 
 const Index = () => {
-  return <PitchDeck />;
+  return <OnePagePitchDeck />;
 };
 
 export default Index;
