@@ -57,13 +57,13 @@ export const ThankYouSlide = () => {
         {/* Company Logos */}
         <div className="flex items-center justify-center gap-6 py-6">
           <img 
-            src="/lovable-uploads/601fc64a-1ec0-48e6-a0d1-8535dcc26fd1.png" 
+            src="./lovable-uploads/601fc64a-1ec0-48e6-a0d1-8535dcc26fd1.png" 
             alt="PMA Logo" 
             className="h-20 w-auto"
           />
           <span className="text-3xl font-bold text-muted-foreground">+</span>
           <img 
-            src="/lovable-uploads/9a133c49-a757-4494-ab37-9b28112b11a5.png" 
+            src="./lovable-uploads/9a133c49-a757-4494-ab37-9b28112b11a5.png" 
             alt="13Classifications.Ai Logo" 
             className="h-20 w-auto"
           />

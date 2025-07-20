@@ -36,7 +36,7 @@ export const ProductStackSlide = () => {
         <div className="space-y-4">
           <div className="flex items-center gap-3 mb-6">
             <img 
-              src="/lovable-uploads/601fc64a-1ec0-48e6-a0d1-8535dcc26fd1.png" 
+              src="./lovable-uploads/601fc64a-1ec0-48e6-a0d1-8535dcc26fd1.png" 
               alt="PMA Logo" 
               className="h-8 w-auto"
             />
@@ -62,7 +62,7 @@ export const ProductStackSlide = () => {
         <div className="space-y-4">
           <div className="flex items-center gap-3 mb-6">
             <img 
-              src="/lovable-uploads/9a133c49-a757-4494-ab37-9b28112b11a5.png" 
+              src="./lovable-uploads/9a133c49-a757-4494-ab37-9b28112b11a5.png" 
               alt="13Classifications.Ai Logo" 
               className="h-8 w-auto"
             />
